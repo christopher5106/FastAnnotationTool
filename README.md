@@ -33,6 +33,9 @@ Rectangle extraction tools create annotations CSV files in the [RotatedRect file
 
 A tool used to annotate rectangles or to show the results (rectangles with `--init` option).
 
+![data annotation](http://christopher5106.github.io/img/annotator_erase.png)
+
+
 Colors :
 
 - blue rectangle : currently active rectangle to annotate
