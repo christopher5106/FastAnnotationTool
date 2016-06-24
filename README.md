@@ -73,7 +73,7 @@ A tool used to annotate rectangles or to show the results (rectangles with `--in
 - **ENTER**: save the letter with the same class as previously.
 
 
-Arguments/Flags :
+FLAGS :
 
 - `--ratio 1.0` is the ratio height/width of the annotation rectangles.
 
@@ -83,7 +83,7 @@ Arguments/Flags :
 
 - `--export=output_dir` will not display annotation interface. Saves the annotated images to directory.
 
-Note :
+NOTES :
 
 - the annotation tool can be stopped and launched again : it will resume the work from *output_file.csv*, previously annotated rectangles appear in yellow.
 
