@@ -16,7 +16,7 @@ The philosophy and advantages of this tool is
 
 - to be usable for visualisation and export : a visual check that the data is correctly annotated, after manual annotation, extraction, or even after your own bounding box prediction algorithm if it uses the Output class to its produce results.
 
-Requires OPENCV, Protobuf.
+Requires OPENCV and Google Protobuf.
 
 ### File format
 
@@ -25,8 +25,9 @@ Rectangle extraction tools create annotations CSV files in the [RotatedRect file
 
 ### Annotation tool
 
-
-    ./bin/annotateRect input_dir output_file.csv
+```bash
+./bin/annotateRect input_dir output_file.csv
+```
 
 A tool used to annotate rectangles or to show the results (rectangles with `--init` option).
 
@@ -86,7 +87,9 @@ Note :
 
 Use annotation information to extract a version of the images :
 
-    ./bin/extractRect [FLAGS] annotations.csv output_dir
+```bash
+./bin/extractRect [FLAGS] annotations.csv output_dir
+```
 
 Moreove, the tool will create an output CSV file listing the new rectangle coordinates in the format `path,label,center_x,center_y,width,height,rotation,noise_x,noise_y,noise_rotation,noise_scale`.
 
