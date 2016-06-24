@@ -1,12 +1,12 @@
-# Fast Image Data Annotation Tool
+# Fast Image Data Annotation Tool (FIAT)
 
-A tool to
+FIAT enables data annotation, data augmentation, data extraction, and result visualisation/validation.
 
 - annotate images for image classification, optical character reading (digit classification, letter classification), ...
 
 - extract data into different format (Caffe LMDB, OpenCV Cascade Classifiers, Tesseract ... ) with data augmentation (resizing, noise in translation / rotation / scaling, pepper noise , gaussian noise, rectangle merging, line extraction ...)
 
-The philosophy and advantages of this tool is
+The philosophy of this tool is
 
 - to enable fast annotation : annotate data just by selecting the diagonal of the object, for a fixed ratio. Press Enter if the class is always the same. Type the letter of the class otherwise,
 
