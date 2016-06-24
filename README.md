@@ -1,6 +1,6 @@
 # Fast Image Data Annotation Tool (FIAT)
 
-FIAT enables data annotation, data augmentation, data extraction, and result visualisation/validation.
+FIAT enables image data annotation, data augmentation, data extraction, and result visualisation/validation.
 
 - annotate images for image classification, optical character reading (digit classification, letter classification), ...
 
