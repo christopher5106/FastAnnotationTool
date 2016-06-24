@@ -2,9 +2,9 @@
 
 A tool to
 
-- annotate images for image classification, optical caracter reading, ...
+- annotate images for image classification, optical caracter reading (digit classification, letter classification), ...
 
-- extract data into different format (Caffe LMDB, ) with data augmentation (resizing, noise in translation, rotation, pepper noise, ...)
+- extract data into different format (Caffe LMDB, OpenCV Cascade Classifiers, Tesseract ) with data augmentation (resizing, noise in translation, rotation, pepper noise, ...)
 
 Requires OPENCV, Protobuf.
 
