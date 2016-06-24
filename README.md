@@ -224,8 +224,6 @@ OUTPUT FLAGS
 
 - `--gray=true` extracts as a gray image. Default is false. Always true in `--backend=opencv` output mode.
 
-- `--neg_per_pos=1 --neg_width=0.3` defines the number of negative sample to extract per positives and the width of the capture window in percentage to the width of the image (30%). By default, no negative (0).
-
 - `--backend=directory` defines the output format for storing the results. Possible values are : directory, lmdb, tesseract, opencv. Default value is directory.
 
 - `--output_class` override the class by the specified class
@@ -237,10 +235,9 @@ OUTPUT FLAGS
 
 NEGATIVE GENERATION
 
-- `--neg_width=0.2` defines the width of negative samples to extract, in pourcentage to the largest image dimension (width or height)
+- `--neg_per_pos` defines the number of negative samples per positives to extract. By default, no negative (0).
 
-- `--neg_per_pos` defines the number of negative samples per positives to extract.
-
+- `--neg_width=0.2` defines the width of negative samples to extract, in pourcentage to the largest image dimension (width or height).
 
 
 # License conditions
