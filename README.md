@@ -163,8 +163,9 @@ will create an output directory *out* with two subdirectories corresponding to e
 
 ![](tutorial/a.jpg) ![](tutorial/e.jpg)
 
+Extract with a noise in rotation with `./bin/extractRect out3.csv out8 --noise_rotation=30`
 
-
+![](tutorial/a_with_rotation_noise.jpg) ![](tutorial/e_with_rotation_noise.jpg)
 
 INPUT SELECTION FLAGS :
 
