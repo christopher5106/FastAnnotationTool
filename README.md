@@ -79,6 +79,8 @@ FLAGS :
 
 - `--cross` display a cross instead of a rectangle for non-current rectangles, ie previous (yellow) or future (green) rectangles. This is a useful display option when rectangles are too close together.
 
+![](http://christopher5106.github.io/img/annotation_cross.png)
+
 - `--init init_file.csv` to initialize the rectangles instead of selecting them manually (appear in green). The first one of them will be use as the currently active rectangle (blue). You can still add new rectangles when all init rectangles (green or blue) have been annotated.
 
 - `--export=output_dir` will not display annotation interface. Saves the annotated images to directory.
