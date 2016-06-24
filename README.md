@@ -28,7 +28,7 @@ Rectangle extraction tools create annotations CSV files in the [RotatedRect file
 ### Annotation tool
 
 ```bash
-./bin/annotateRect input_dir output_file.csv
+./bin/annotateRect [FLAGS] input_dir output_file.csv
 ```
 
 A tool used to annotate rectangles or to show the results (rectangles with `--init` option).
@@ -36,7 +36,7 @@ A tool used to annotate rectangles or to show the results (rectangles with `--in
 ![data annotation](http://christopher5106.github.io/img/annotator_erase.png)
 
 
-Colors :
+Meaning of the colors :
 
 - blue rectangle : currently active rectangle to annotate
 
@@ -44,7 +44,7 @@ Colors :
 
 - yellow rectangles : annotated rectangles
 
-Keys :
+Add a rectangle or modify the rectangle with the following keys :
 
 - Click with the mouse to set the center of the active rectangle (blue) or create a new active rectangle at this position.
 
@@ -62,15 +62,18 @@ Keys :
     - augment size (up arrow key)
     - downsize (down arrow key)
 
-- **Any letter**: save the currently active rectangle (blue) with this letter as category / class . For example "0", if there is only one category. The blue rectangle will become yellow.
-
-- **ENTER**: save the letter with the same class as previously.
-
 - **BACKSPACE**: erase the currently active rectangle.
 
 - **ESC**: next init rectangle or next image (without save)
 
-Arguments :
+Annotate the class with :
+
+- **Any letter**: save the currently active rectangle (blue) with this letter as category / class . For example "0", if there is only one category. The blue rectangle will become yellow.
+
+- **ENTER**: save the letter with the same class as previously.
+
+
+Arguments/Flags :
 
 - `--ratio 1.0` is the ratio height/width of the annotation rectangles.
 
@@ -98,23 +101,37 @@ Use annotation information to extract a version of the images :
 
 Moreove, the tool will create an output CSV file listing the new rectangle coordinates in the format `path,label,center_x,center_y,width,height,rotation,noise_x,noise_y,noise_rotation,noise_scale`.
 
-Extraction extracts at best quality.
+Extraction extracts at best quality possible.
 
 Image will be rotated so that annotation window will be parallel to the image borders.
 
-FLAGS :
+INPUT SELECTION FLAGS :
 
-- `--full_image` will not extract the image along the annotation. Always true in `--backend=opencv` output mode.
+- `--input_class_filter` select entries of the specified class only.
+
+- `--limit` limit the number of annotation rectangle to consider, good for debuging purposes.
+
+EDIT RECTANGLES
 
 - `--skip_rotation` skips rotation information in annotation (all set to 0.0).
 
-- `--factor=1.2` extends the extraction box by a factor of the width and height. Default value is 1.0.
+- `--factor=1.2` extends the extraction box by a factor of the width and height. `--factor_width` and `--factor_height` do the same on one axis only and are cumulative with `--factor` (multiplication).
 
-- `--resize_width=400` resizes the output to a width of `resize_width` and a height of `resize_width*ratio`. `--resize_width=0` will not resize the output. Default value is no resize. Not available in `--full_image` and `--backend=opencv` mode.
+- `--offset_x` and `--offset_y` add an offset on each axis of the rectangle, in percentage of the width of the rectangle.
 
-- `--gray=true` extracts as a gray image. Default is false. Always true in `--backend=opencv` output mode.
+- `--merge` : if multiple bounding box per images, will extract the global bounding box containing all rectangles in each image. Default is false.
 
-- `--noise_translation=0.2` adds a noise in translation of 20% of the width/height. Not taken into consideration for negatives generation.
+- `--merge_line` : If multiple rectangle per images, merge rectangles that are roughly on the same line.
+
+- `--correct_ratio` : corrects the ratio of the annotated rectangles to the specified `--ratio` by augmenting one of the two dimensions (height or width). Default is false.
+
+- `--add_borders=true` : adds borders to the extracted image to fit the ratio. Default is false. Available only when `--resize_width` not zero.
+
+- `--ratio=1.0` is used in combination to `--correct_ratio` or `--resize-width` options. It defines the ratio (height/width) of the window to extract. The use of `--resize-width` option without `--correct_ratio` will stretch the image to final dimensions.
+
+NOISE FLAGS
+
+- `--noise_translation=0.2` adds a noise in translation of 20% of the width/height. Not taken into consideration for negatives generation. `--noise_translation_offset` can be used to specify a mininum noise (for negative generation for example).
 
 - `--noise_rotation=30` adds a noise in rotation in `[-noise_rotation°,noise_rotation°]`.
 
@@ -124,17 +141,32 @@ FLAGS :
 
 - `--samples` is the number of sample to extract per image. Default is 1. Useful in combination with noise option.
 
-- `--merge` : if multiple bounding box per images, will extract the global bounding box containing all rectangles in each image. Default is false.
 
-- `--correct_ratio` : corrects the ratio of the annotated rectangles to the specified `--ratio` by augmenting one of the two dimensions (height or width). Default is false.
+OUTPUT FLAGS
 
-- `--add_borders=true` : adds borders to the extracted image to fit the ratio. Default is false. Available only when `--resize_width` not zero.
+- `--full_image` will not extract the rectangle along the given annotation. Always true in `--backend=opencv` output mode.
 
-- `--ratio=1.0` is used in combination to `--correct_ratio` or `--resize-width` options. It defines the ratio (height/width) of the window to extract. The use of `--resize-width` option without `--correct_ratio` will stretch the image to final dimensions.
+- `--resize_width=400` resizes the output to a width of `resize_width` and a height of `resize_width*ratio`. `--resize_width=0` will not resize the output. Default value is no resize. Not available in `--full_image` and `--backend=opencv` mode.
+
+- `--gray=true` extracts as a gray image. Default is false. Always true in `--backend=opencv` output mode.
 
 - `--neg_per_pos=1 --neg_width=0.3` defines the number of negative sample to extract per positives and the width of the capture window in percentage to the width of the image (30%). By default, no negative (0).
 
 - `--backend=directory` defines the output format for storing the results. Possible values are : directory, lmdb, tesseract, opencv. Default value is directory.
+
+- `--output_class` override the class by the specified class
+
+- `--output_by_label=false` avoids creation of different output directories per label. Available for `--backend=directory` only.
+
+- `--append` append new extracts to an existing directory. Available for `--backend=directory` only.
+
+
+NEGATIVE GENERATION
+
+- `--neg_width=0.2` defines the width of negative samples to extract, in pourcentage to the largest image dimension (width or height)
+
+- `--neg_per_pos` defines the number of negative samples per positives to extract.
+
 
 
 # License conditions
