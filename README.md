@@ -1,4 +1,4 @@
-# FastAnnotationTool
+# Fast Annotation Tool
 
 A tool to
 
