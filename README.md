@@ -1,10 +1,18 @@
-# Fast Annotation Tool
+# Fast Image Data Annotation Tool
 
 A tool to
 
 - annotate images for image classification, optical character reading (digit classification, letter classification), ...
 
 - extract data into different format (Caffe LMDB, OpenCV Cascade Classifiers, Tesseract ) with data augmentation (resizing, noise in translation, rotation, pepper noise, ...)
+
+The philosophy and advantages of this tool is
+
+- to be fast : for example, you can annotate data just by selecting the diagonal of the object, for a fixed ratio
+
+- to be re-usable for different cases, and to leave you free to build any other tool as input of the annotation process, using weaky classifier or an bounding box proposal algorithm such as selective search, to build a list of rectangles where objects might be and annotate faster.
+
+- act like a monad for the extraction tool : given a directory and a CSV file, extraction tool will produce a new directory and CSV file, in the same format.
 
 Requires OPENCV, Protobuf.
 
