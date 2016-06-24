@@ -22,7 +22,7 @@ Requires OPENCV and Google Protobuf.
 
 ### File format
 
-Rectangle extraction tools create annotations CSV files in the RotatedRect file format. [This blog post will give you the reasons motivating this choice.](http://christopher5106.github.io/computer/vision/2015/12/26/file-format-for-computer-vision-annotations.html).
+Rectangle extraction tools create annotations CSV files in the RotatedRect file format. [This blog post will give you the reasons motivating this choice](http://christopher5106.github.io/computer/vision/2015/12/26/file-format-for-computer-vision-annotations.html).
 
 
 ### Annotation tool
