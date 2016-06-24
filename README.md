@@ -64,7 +64,7 @@ Arguments :
 
 - `--init init_file.csv` to initialize the rectangles instead of selecting them manually (appear in green). The first one of them will be use as the currently active rectangle (blue). You can still add new rectangles when all init rectangles (green or blue) have been annotated.
 
--- `--export=output_dir` will not display annotation interface. Saves the annotated images to directory.
+- `--export=output_dir` will not display annotation interface. Saves the annotated images to directory.
 
 Note :
 
