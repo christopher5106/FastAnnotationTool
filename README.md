@@ -4,7 +4,7 @@ A tool to
 
 - annotate images for image classification, optical character reading (digit classification, letter classification), ...
 
-- extract data into different format (Caffe LMDB, OpenCV Cascade Classifiers, Tesseract ) with data augmentation (resizing, noise in translation / rotation / scaling, pepper noise , gaussian noise, rectangle merging, line extraction ...)
+- extract data into different format (Caffe LMDB, OpenCV Cascade Classifiers, Tesseract ... ) with data augmentation (resizing, noise in translation / rotation / scaling, pepper noise , gaussian noise, rectangle merging, line extraction ...)
 
 The philosophy and advantages of this tool is
 
