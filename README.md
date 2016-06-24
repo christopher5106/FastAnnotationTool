@@ -109,7 +109,7 @@ INPUT SELECTION FLAGS :
 
 - `--input_class_filter` select entries of the specified class only.
 
-- `--limit` limit the number of annotation rectangle to consider, good for debuging purposes.
+- `--limit` limit the number of annotation rectangles to consider, good for debuging purposes.
 
 EDIT RECTANGLES
 
