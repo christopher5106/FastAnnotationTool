@@ -8,11 +8,13 @@ A tool to
 
 The philosophy and advantages of this tool is
 
-- to be fast : for example, you can annotate data just by selecting the diagonal of the object, for a fixed ratio
+- to enable fast annotation : annotate data just by selecting the diagonal of the object, for a fixed ratio. Press Enter if the class is always the same. Type the letter of the class otherwise.
 
-- to be re-usable for different cases, and to leave you free to build any other tool as input of the annotation process, using weaky classifier or an bounding box proposal algorithm such as selective search, to build a list of rectangles where objects might be and annotate faster.
+- to be re-usable for different scenarios, and leave you free to build any other tool as input of the annotation process, using any pre-existing weaky classifier or bounding box proposal algorithm such as selective search, to facilitate annotation with a list of rectangles to select (type the letter of the class) or discard (press ESC).
 
-- act like a monad for the extraction tool : given a directory and a CSV file, extraction tool will produce a new directory and CSV file, in the same format.
+- to have the extraction tool act like a monad, so that you can apply transformation in any order, at any stage of your process, the format remaining the same : given a directory and a CSV file, extraction tool will produce a new directory and CSV file, in the same format.
+
+- to be usable for visualisation and export : a visual check that the data is correctly annotated, after manual annotation, extraction, or even after your own bounding box prediction algorithm if it uses the Output class to its produce results.
 
 Requires OPENCV, Protobuf.
 
