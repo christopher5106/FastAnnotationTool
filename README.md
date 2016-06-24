@@ -188,7 +188,9 @@ EDIT RECTANGLES
 ![](tutorial/a_with_factor.jpg) ![](tutorial/e_with_factor.jpg)
 
 
-- `--offset_x` and `--offset_y` add an offset on each axis of the rectangle, in percentage of the width of the rectangle.
+- `--offset_x` and `--offset_y` add an offset on each axis of the rectangle, in percentage of the width of the rectangle. In the example, select the titles of the book with the command `./bin/extractRect out3.csv out12 --offset_y=0.5 --factor_height=0.3`
+
+![](tutorial/a_subselection.jpg) ![](tutorial/e_subselection.jpg)
 
 - `--merge` : if multiple bounding box per images, will extract the global bounding box containing all rectangles in each image. In the example : `./bin/extractRect out.csv out --merge` will produce :
 
