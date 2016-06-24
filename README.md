@@ -159,9 +159,11 @@ For example in the previous example,
 ./bin/extractRect out.csv out
 ```
 
-will create an output directory *out* with two subdirectories corresponding to each label, *out/a* and *out/b* and its corresponding extracting examples :
+will create an output directory *out* with two subdirectories corresponding to each label, *out/a* and *out/b* and its corresponding extracted objects, and a CSV file *out/results.csv* with image path, labels and new rectangle coordinates after the extraction.
 
 ![](tutorial/a.jpg) ![](tutorial/e.jpg)
+
+
 
 
 INPUT SELECTION FLAGS :
@@ -178,7 +180,10 @@ EDIT RECTANGLES
 
 - `--offset_x` and `--offset_y` add an offset on each axis of the rectangle, in percentage of the width of the rectangle.
 
-- `--merge` : if multiple bounding box per images, will extract the global bounding box containing all rectangles in each image. Default is false.
+- `--merge` : if multiple bounding box per images, will extract the global bounding box containing all rectangles in each image. In the example : `./bin/extractRect out.csv out --merge` will produce :
+
+![](tutorial/merge.jpg)
+
 
 - `--merge_line` : If multiple rectangle per images, merge rectangles that are roughly on the same line.
 
