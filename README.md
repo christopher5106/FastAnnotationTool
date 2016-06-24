@@ -176,7 +176,10 @@ EDIT RECTANGLES
 
 - `--skip_rotation` skips rotation information in annotation (all set to 0.0).
 
-- `--factor=1.2` extends the extraction box by a factor of the width and height. `--factor_width` and `--factor_height` do the same on one axis only and are cumulative with `--factor` (multiplication).
+- `--factor=1.2` extends the extraction box by a factor of the width and height. `--factor_width` and `--factor_height` do the same on one axis only and are cumulative with `--factor` (multiplication). In the example, `./bin/extractRect out.csv out7 --factor 1.2`
+
+![](tutorial/a_with_factor.jpg) ![](tutorial/e_with_factor.jpg)
+
 
 - `--offset_x` and `--offset_y` add an offset on each axis of the rectangle, in percentage of the width of the rectangle.
 
