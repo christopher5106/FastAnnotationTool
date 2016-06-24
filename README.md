@@ -91,6 +91,52 @@ NOTES :
 
 - although annotation tool can read images in an output_file.csv or init_file.csv outside current exe directory (by adding the CSV dir to the image path), it will save images with the input_dir as base path. So, when annotating, execute the command in the same directory as the output_file.csv.
 
+EXAMPLE :
+
+Annotate images in the current directory :
+
+```bash
+./bin/annotateRect . out.csv -ratio 1.35
+```
+
+A first image will appear :
+
+![](pic.jpg)
+
+To annotate fast, just select the diagonal, by clicking first the top left corner of the object, then the bottom right corner, as shown here with the red arrows :
+
+![](tutorial/pic_selection.jpg)
+
+Image is now selected and appear in blue:
+
+![](tutorial/selected.png)
+
+Press the key corresponding to its class, for example 'a'. Now it appears in yellow.
+
+![](tutorial/labeled.png)
+
+Select the second book.
+
+![](tutorial/second_selected.png)
+
+And press the key corresponding to its class, for example 'e'.
+
+![](tutorial/result.png)
+
+The output annotation file in CSV format *out.csv* will look like :
+
+```
+./pic.jpg,a,709,816,826,1116,-14.6958
+./pic.jpg,e,1510,607,741,1001,6.32224
+```
+
+At any time, you can view how the annotations are, and potentially add new annotations with the same command :
+
+```bash
+./bin/annotateRect . out.csv -ratio 1.35
+```
+
+
 ### Extraction tool
 
 Use annotation information to extract a version of the images :
