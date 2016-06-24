@@ -8,8 +8,6 @@ A tool to
 
 Requires OPENCV, Protobuf.
 
-This tool is a contribution to OpenSource for the work I performed at Axa.
-
 ### File format
 
 Rectangle extraction tools create annotations CSV files in the [RotatedRect file format](http://christopher5106.github.io/computer/vision/2015/12/26/file-format-for-computer-vision-annotations.html).
@@ -119,3 +117,8 @@ FLAGS :
 - `--neg_per_pos=1 --neg_width=0.3` defines the number of negative sample to extract per positives and the width of the capture window in percentage to the width of the image (30%). By default, no negative (0).
 
 - `--backend=directory` defines the output format for storing the results. Possible values are : directory, lmdb, tesseract, opencv. Default value is directory.
+
+
+# Licences
+
+This tool has been developped for a work at Axa, and is a contribution to OpenSource by Axa.
