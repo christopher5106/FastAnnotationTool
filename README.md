@@ -153,6 +153,17 @@ Extraction extracts at best quality possible.
 
 Image will be rotated so that annotation window will be parallel to the image borders.
 
+For example in the previous example,
+
+```bash
+./bin/extractRect out.csv out
+```
+
+will create an output directory *out* with two subdirectories corresponding to each label, *out/a* and *out/b* and its corresponding extracting examples :
+
+![](tutorial/a.jpg) ![](tutorial/e.jpg)
+
+
 INPUT SELECTION FLAGS :
 
 - `--input_class_filter` select entries of the specified class only.
