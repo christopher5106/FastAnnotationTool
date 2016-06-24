@@ -167,6 +167,12 @@ Extract with a noise in rotation with `./bin/extractRect out3.csv out8 --noise_r
 
 ![](tutorial/a_with_rotation_noise.jpg) ![](tutorial/e_with_rotation_noise.jpg)
 
+Several options such as noise in translation, scale, or pepper/gaussian noise are available.
+
+The `--full_image` option makes transformation available without extracting the rectangle.
+
+See below for more options.
+
 INPUT SELECTION FLAGS :
 
 - `--input_class_filter` select entries of the specified class only.
