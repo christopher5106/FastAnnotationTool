@@ -8,6 +8,8 @@ A tool to
 
 Requires OPENCV, Protobuf.
 
+This tool is a contribution to OpenSource for the work I performed at Axa.
+
 ### File format
 
 Rectangle extraction tools create annotations CSV files in the [RotatedRect file format](http://christopher5106.github.io/computer/vision/2015/12/26/file-format-for-computer-vision-annotations.html).
