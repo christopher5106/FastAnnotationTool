@@ -36,7 +36,7 @@ A tool used to annotate rectangles or to show the results (rectangles with `--in
 ![data annotation](http://christopher5106.github.io/img/annotator_erase.png)
 
 
-Meaning of the colors :
+**Meaning of the colors** :
 
 - blue rectangle : currently active rectangle to annotate
 
@@ -44,7 +44,7 @@ Meaning of the colors :
 
 - yellow rectangles : annotated rectangles
 
-Add a rectangle or modify the rectangle with the following keys :
+**Add a rectangle or modify the rectangle** with the following keys :
 
 - Click with the mouse to set the center of the active rectangle (blue) or create a new active rectangle at this position.
 
@@ -66,7 +66,7 @@ Add a rectangle or modify the rectangle with the following keys :
 
 - **ESC**: next init rectangle or next image (without save)
 
-Annotate the class with :
+**Annotate the class** with :
 
 - **Any letter**: save the currently active rectangle (blue) with this letter as category / class . For example "0", if there is only one category. The blue rectangle will become yellow.
 
