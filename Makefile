@@ -37,8 +37,13 @@ caffe_include = -Wl,-rpath $(CAFFE)/build/lib -I /usr/local/cuda/include -I $(CA
 caffe_lib =  -lcaffe -lboost_system -lpthread
 endif
 
+# CAFFE ?= 0
+# ifeq ($(CPU_only), 1)
+#  	CAFFE := -DCPU_ONLY=1
+# endif
+
 all: $(utils)
 	rm -rf bin
 	mkdir bin
-	$(compiler) -o bin/extractRect $(opencv_flags) $(utils) $(caffe_include) src/Output.cpp src/extractRect.cpp $(opencv_lib) $(caffe_lib) -llmdb $(lgflags)
+	$(compiler) -DCAFFE_=1 -o bin/extractRect $(opencv_flags) $(utils) $(caffe_include) src/Output.cpp src/extractRect.cpp $(opencv_lib) $(caffe_lib) -llmdb $(lgflags)
 	$(compiler) -o bin/annotateRect $(opencv_flags) $(utils) src/annotateRect.cpp $(lgflags) -lglog $(opencv_lib)

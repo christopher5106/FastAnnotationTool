@@ -18,7 +18,7 @@
 // #include <leveldb/write_batch.h>
 
 
-#ifdef CAFFE
+#ifdef CAFFE_
 #include <lmdb.h>
 #include "caffe/proto/caffe.pb.h"
 #endif
@@ -49,7 +49,7 @@ class Directory: public Output
 };
 
 
-#ifdef CAFFE
+#ifdef CAFFE_
 class LMDB: public Output
 {
   public:

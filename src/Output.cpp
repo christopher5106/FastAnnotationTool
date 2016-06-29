@@ -51,7 +51,7 @@ void Directory::close() {
 };
 
 
-#ifdef CAFFE
+#ifdef CAFFE_
 LMDB::LMDB(char * directory) : Output(directory) {
   item_id = 0;
   LOG(INFO) << "Opening lmdb " << directory;
