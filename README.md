@@ -138,6 +138,7 @@ At any time, you can view how the annotations are, and potentially add new annot
 ./bin/annotateRect . out.csv -ratio 1.35
 ```
 
+The `--export` option is also very useful : it allows to export the images with the rectangles, without having the burden of the annotation interface and to facilitate results sharing for instance.
 
 ### Extraction tool
 
