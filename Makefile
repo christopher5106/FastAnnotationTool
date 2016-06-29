@@ -1,5 +1,10 @@
 CONFIG_FILE := Makefile.config
 
+ifeq ($(wildcard $(CONFIG_FILE)),)
+$(error $(CONFIG_FILE) not found. See $(CONFIG_FILE).example.)
+endif
+include $(CONFIG_FILE)
+
 # Determine platform
 UNAME := $(shell uname -s)
 ifeq ($(UNAME), Linux)
