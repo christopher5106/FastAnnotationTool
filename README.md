@@ -62,6 +62,8 @@ A tool used to annotate rectangles or to show the results (rectangles with `--in
     - augment size (up arrow key)
     - downsize (down arrow key)
 
+For platforms for which pressing FN with arrow key does not change key value, press **Space bar** to change into "Rotation/Scale" mode and use arrow keys.
+
 - **BACKSPACE**: erase the currently active rectangle.
 
 - **ESC**: next init rectangle or next image (without save)

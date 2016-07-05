@@ -147,6 +147,8 @@ void saveRR ( couple& cc, string image_path, float factor, char classe, std::ofs
 int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectangles_file, bool cross, string export_dir )
 {
 
+    int mode = 0;
+
     time_t last_timer;
     time_t new_timer;
     vector<int> times (10,0);
@@ -287,19 +289,18 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
           //
           // } else
 
-          if(k == 63232 || k == 65362) {
-
-            //cout << "Up" << endl;
-            if(cc.init) {
-              if(sum==0) {
-                cc.r.center.y = cc.r.center.y - fast_position_step;
-              } else {
-                cc.r.center.y = cc.r.center.y - position_step;
-              }
-              displayRR(cc);
+          if (k == 32) {
+            cout << "Change mode to " ;
+            if( mode ) {
+              mode = 0;
+              cout << "Position" << endl;
+            } else {
+              cout << "Rotation/Scale" << endl;
+              mode = 1;
             }
 
-          } else if( k == 63276 || k == 65365) {
+
+          } else if( k == 63276 || k == 65365 || ( mode == 1 && k == 65362 ) ) {
             //cout << "FN+ Up" << endl;
 
             if(cc.init) {
@@ -315,20 +316,19 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
 
               displayRR(cc);
             }
+          } else if (k == 63232 || k == 65362) {
 
-          } else if(k == 63233 || k == 65364) {
-
-            //cout << "Down" << endl;
+            //cout << "Up" << endl;
             if(cc.init) {
               if(sum==0) {
-                cc.r.center.y = cc.r.center.y + fast_position_step;
+                cc.r.center.y = cc.r.center.y - fast_position_step;
               } else {
-                cc.r.center.y = cc.r.center.y + position_step;
+                cc.r.center.y = cc.r.center.y - position_step;
               }
               displayRR(cc);
             }
 
-          } else if (k == 63277 || k == 65366) {
+          } else if (k == 63277 || k == 65366 || ( mode == 1 && k == 65364 ) ) {
 
             //cout << "FN+ Down" << endl;
             if(cc.init) {
@@ -344,6 +344,29 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
 
               displayRR(cc);
             }
+          } else if(k == 63233 || k == 65364) {
+
+            //cout << "Down" << endl;
+            if(cc.init) {
+              if(sum==0) {
+                cc.r.center.y = cc.r.center.y + fast_position_step;
+              } else {
+                cc.r.center.y = cc.r.center.y + position_step;
+              }
+              displayRR(cc);
+            }
+
+
+
+          } else if ( k == 63273 || k == 65360 || ( mode == 1 && k == 65361 ) ) {
+            //cout << "FN+ right  << endl;
+            if(cc.init) {
+              if(sum==0) {
+                orientation -= fast_orientation_step;
+              } else
+                orientation -= orientation_step;
+              displayRR(cc);
+            }
 
           } else if ( k == 63234 || k == 65361) {
 
@@ -357,13 +380,17 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
               displayRR(cc);
             }
 
-          } else if ( k == 63273 || k == 65360 ) {
-            //cout << "FN+ right  << endl;
+
+
+          } else if ( k == 63275 || k == 65367 || ( mode == 1 && k == 65363 )) {
+
+            //cout << "FN+ left" << endl;
             if(cc.init) {
               if(sum==0) {
-                orientation -= fast_orientation_step;
+                orientation += fast_orientation_step;
               } else
-                orientation -= orientation_step;
+                orientation += orientation_step;
+
               displayRR(cc);
             }
 
@@ -375,18 +402,6 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
                 cc.r.center.x = cc.r.center.x + fast_position_step;
               } else
                 cc.r.center.x = cc.r.center.x + position_step;
-
-              displayRR(cc);
-            }
-
-          } else if ( k == 63275 || k == 65367) {
-
-            //cout << "FN+ left" << endl;
-            if(cc.init) {
-              if(sum==0) {
-                orientation += fast_orientation_step;
-              } else
-                orientation += orientation_step;
 
               displayRR(cc);
             }
