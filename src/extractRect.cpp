@@ -392,7 +392,7 @@ int main( int argc, char** argv )
       full_image = true;
       gray = true;
       output = new OpnCV(argv[2]);
-#ifdef CAFFE_
+#ifdef CAFFE
     } else if ( db_backend == "lmdb" ) {
       output = new LMDB(argv[2]);
 #endif
