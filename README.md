@@ -18,7 +18,7 @@ The philosophy of this tool is
 
 - to be usable for visualisation and export : a visual check that the data is correctly annotated, after manual annotation, extraction, or even after your own bounding box prediction algorithm if it uses the Output class to its produce results.
 
-Requires OPENCV and Google Protobuf.
+Requires OPENCV 3 and Google Protobuf.
 
 ### File format
 
