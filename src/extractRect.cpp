@@ -98,7 +98,7 @@ int extract_image(Output * output, string  filename, Mat image, \
       cv::Mat dst ;
       add_salt_pepper_noise(dst,0.3,0.3,rng);
       cv::warpAffine(image, dst, r, Size(len,len), INTER_LINEAR,cv::BORDER_CONSTANT);
-        imwrite("ok.png", dst);
+
       // ... and adapt annotation to new referentiel of the new image and factor
       RotatedRect extract_rrect ( change_ref ( cv::Point2f( res_x , res_y), pt.x, pt.y, redress_rotation + delta_rotation) + pt  , Size2f(res_w * factor * factor_width, res_h * factor * factor_height ), 0.0 );
       RotatedRect origin_rrect (extract_rrect.center, extract_rrect.size, - delta_rotation );
