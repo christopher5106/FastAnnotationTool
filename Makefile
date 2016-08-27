@@ -34,7 +34,7 @@ tesseract_lib = -llept -ltesseract
 
 ifdef CAFFE
 caffe_include = -Wl,-rpath $(CAFFE)/build/lib -I /usr/local/cuda/include -I $(CAFFE)/build/src/ -I $(CAFFE)/build/include -I $(CAFFE)/include -I /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/Headers/ -L $(CAFFE)/build/lib/
-caffe_lib =  -lcaffe -lboost_system -lpthread
+caffe_lib =  -l$(CAFFE_LIB) -lboost_system -lpthread
 endif
 
 # CAFFE ?= 0
