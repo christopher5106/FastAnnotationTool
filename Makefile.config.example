@@ -1,1 +1,6 @@
 CAFFE := ~/technologies/caffe
+CAFFE_LIB := caffe
+#If building from caffe NVIDIA fork, use this instead
+#CAFFE_LIB := caffe-nv
+
+
