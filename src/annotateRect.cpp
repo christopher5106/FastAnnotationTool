@@ -261,7 +261,7 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
           continue;
 
         int k ;
-        while ( (k = waitKey(0)) ) {
+        while ( (k = waitKeyEx(0)) ) {
           cout << "key " << k << endl;
 
           last_timer = new_timer;
