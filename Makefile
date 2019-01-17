@@ -1,10 +1,3 @@
-CONFIG_FILE := Makefile.config
-
-ifeq ($(wildcard $(CONFIG_FILE)),)
-$(error $(CONFIG_FILE) not found. See $(CONFIG_FILE).example.)
-endif
-include $(CONFIG_FILE)
-
 # Determine platform
 UNAME := $(shell uname -s)
 ifeq ($(UNAME), Linux)
@@ -14,7 +7,7 @@ else ifeq ($(UNAME), Darwin)
 endif
 
 opencv_l := -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lopencv_imgproc -lopencv_highgui -lopencv_features2d -lopencv_calib3d
-opencv_l := -lopencv_calib3d -lopencv_core -lopencv_features2d -lopencv_flann -lopencv_gpu -lopencv_highgui -lopencv_imgproc -lopencv_legacy -lopencv_ml -lopencv_objdetect -lopencv_ocl -lopencv_photo -lopencv_stitching -lopencv_superres -lopencv_ts -lopencv_video -lopencv_videostab -lopencv_imgcodecs  -lopencv_videoio
+opencv_l := -lopencv_calib3d -lopencv_core -lopencv_features2d -lopencv_flann -lopencv_highgui -lopencv_imgproc -lopencv_objdetect -lopencv_photo -lopencv_stitching -lopencv_superres -lopencv_ts -lopencv_video -lopencv_videostab -lopencv_imgcodecs  -lopencv_videoio
 
 
 # Linux

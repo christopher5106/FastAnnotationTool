@@ -20,6 +20,16 @@ The philosophy of this tool is
 
 Requires OPENCV 3 and Google Protobuf.
 
+### Build on Ubuntu 18.04
+    sudo apt-get install caffe-cpu caffe-doc caffe-tools-cpu libcaffe-cpu-dev libcaffe-cpu1 python3-caffe-cpu
+    sudo apt-get install libgoogle-glog-dev
+    sudo apt-get install libprotobuf-dev libprotoc-dev protobuf-compiler
+    sudo apt-get install libprotobuf-dev libprotoc-dev protobuf-compiler
+    sudo apt-get install libopencv-contrib-dev libopencv-dev libopencv-photo-dev libopencv-shape-dev
+    sudo apt-get install libopencv-contrib-dev libopencv-dev libopencv-photo-dev libopencv-shape-dev
+    sudo apt-get install liblmdb-dev
+    make all
+
 ### File format
 
 Rectangle extraction tools create annotations CSV files in the RotatedRect file format. [This blog post will give you the reasons motivating this choice](http://christopher5106.github.io/computer/vision/2015/12/26/file-format-for-computer-vision-annotations.html).
